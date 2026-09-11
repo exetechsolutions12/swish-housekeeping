@@ -159,3 +159,104 @@ p{margin-bottom:1rem}
 @media(max-width:620px){
   body{font-size:15px}.container{width:min(100% - 24px,1120px)}.brand-mark{width:220px}.section{padding:52px 0}.hero{padding:46px 0 40px}.hero-grid{grid-template-columns:1fr;gap:32px}.hero-photo-wrap{padding-left:18px;padding-bottom:18px}.hero-note{right:-2px}.intro-line-inner{align-items:flex-start;flex-direction:column;gap:8px}.home-service,.service-row{grid-template-columns:1fr;gap:5px}.personality-copy{padding:30px}.recent-item{grid-template-columns:1fr;gap:5px}.home-photos{grid-template-columns:1fr}.home-photos figure:first-child{grid-column:auto}.home-photos img,.home-photos figure:first-child img{height:auto;min-height:0}.home-photos-copy{align-items:flex-start;flex-direction:column}.companion-story img,.about-story img,.team-lead-photo img,.team-join img{height:auto}.team-grid{grid-template-columns:1fr 1fr;gap:26px 12px}.team-person:nth-child(even){padding-top:18px}.contact-main{gap:48px}.form-wrap{padding-left:18px}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}
 }
+
+
+/* v12 polish — softer, friendlier and less line-heavy */
+.text-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  color:var(--pink);
+  background:#fff;
+  border:2px solid var(--pink);
+  border-radius:10px;
+  padding:9px 15px;
+  font-weight:800;
+  text-decoration:none;
+}
+.text-link:hover{background:var(--pink);color:#fff;border-color:var(--pink)}
+.button{border-radius:10px;padding:11px 18px}
+.button.alt{background:#fff;color:var(--pink);border-color:var(--pink)}
+.actions{align-items:center}
+
+/* Keep the header light and friendly rather than ruled */
+.site-header{border-bottom:0;box-shadow:0 3px 16px rgba(239,47,125,.08)}
+.nav-links a:not(.call)::after{display:none}
+.nav-links a[aria-current="page"]{color:var(--pink);background:var(--pink-soft);border-radius:9px;padding:7px 10px}
+.nav-links .call{border-left:0;background:var(--pink);color:#fff;padding:9px 13px;border-radius:10px}
+
+/* Homepage */
+.hero-photo-wrap{padding:0;background:transparent}
+.hero-photo-wrap::before{display:none}
+.hero-photo{border-radius:18px;aspect-ratio:4/5;object-position:center 28%}
+.hero-note{display:none}
+.intro-line{border:0;background:var(--pink-wash);padding:18px 0}
+.intro-line-inner{gap:18px}
+.home-services-list{border-top:0}
+.home-service{border-bottom:0;padding:12px 0}
+.home-service + .home-service{margin-top:4px}
+.personality-main img{border-radius:16px}
+.personality-copy{border-radius:16px}
+.recent-list{border-top:0}
+.recent-item{border-bottom:0;padding:14px 0}
+.recent-item + .recent-item{margin-top:4px}
+.home-contact{border-top:0;background:var(--pink-wash)}
+.footer{border-top:0;background:var(--pink-wash)}
+.subfooter{border-top:0;padding-top:8px}
+
+/* Inner page intros: tighter and less formal */
+.page-intro{padding:48px 0 24px}
+.page-intro .container{grid-template-columns:150px 1fr;gap:30px}
+.page-intro h1{font-size:clamp(2.25rem,4.2vw,4.1rem)}
+
+/* Services: use breathing room and small pink markers instead of rules */
+.services-layout{gap:54px}
+.service-group{border-top:0;padding-top:0}
+.service-group>.eyebrow{margin-bottom:20px}
+.service-row{position:relative;display:block;border:0;padding:0 0 0 18px;margin:0 0 26px}
+.service-row::before{content:"";position:absolute;left:0;top:.42rem;width:8px;height:8px;border-radius:50%;background:var(--pink)}
+.service-row h3{font-size:1.02rem;margin-bottom:5px}
+.service-row p{font-size:.95rem;max-width:520px}
+.companion-copy{border-left:0;background:var(--pink-wash);padding:28px;border-radius:14px}
+.companion-story img{border-radius:14px}
+
+/* About: face-safe image and softer standards layout */
+.about-story{align-items:center;gap:54px}
+.about-story img{height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 12%;border-radius:16px}
+.standards-list{border-top:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 28px}
+.standard{border-bottom:0;padding:0}
+.story-notes{grid-template-columns:1fr 1fr;gap:20px 28px}
+.story-note{border-left:0;padding-left:0}
+.story-note strong{font-size:.82rem}
+
+/* Team: compact, aligned and equal cards */
+.team-section{padding-top:26px}
+.team-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 18px}
+.team-person{margin:0;padding:0!important}
+.team-person img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:12px;background:var(--pink-wash)}
+.team-person figcaption{padding-top:7px;text-align:center;font-size:.95rem}
+.team-join{border-top:0;background:var(--pink-wash);padding:28px;border-radius:16px}
+.team-join img{border-radius:12px}
+
+/* Contact: fewer rule lines */
+.contact-details{border-top:0;padding-top:0}
+.form-wrap{border-left:0;background:var(--pink-wash);padding:28px;border-radius:14px}
+.form input,.form select,.form textarea{border:1.5px solid var(--pink-soft);border-radius:9px;padding:11px;background:#fff}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--pink);outline:2px solid rgba(239,47,125,.08)}
+
+@media(max-width:900px){
+  .page-intro .container{grid-template-columns:1fr;gap:6px}
+  .team-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 14px}
+  .standards-list{grid-template-columns:1fr 1fr}
+  .story-notes{grid-template-columns:1fr 1fr}
+  .nav-links a[aria-current="page"]{padding:10px}
+}
+@media(max-width:620px){
+  .page-intro{padding:38px 0 18px}
+  .team-grid{grid-template-columns:1fr 1fr;gap:18px 10px}
+  .team-person img{aspect-ratio:4/5}
+  .standards-list,.story-notes{grid-template-columns:1fr}
+  .companion-copy,.form-wrap{padding:22px}
+  .personality-copy{border-radius:12px}
+}
