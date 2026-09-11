@@ -1,0 +1,25 @@
+source: .
+paths:
+  uploads: assets/images
+  static: .
+_editables:
+  text:
+    bold: true
+    italic: true
+    link: true
+  block:
+    format: p h2 h3 ul ol
+    bold: true
+    italic: true
+    link: true
+    bulletedlist: true
+    numberedlist: true
+  image:
+    expandable: true
+_inputs:
+  title:
+    type: text
+    comment: Page title
+  description:
+    type: textarea
+    comment: Search description
