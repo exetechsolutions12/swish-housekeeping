@@ -297,3 +297,22 @@ p{margin-bottom:1rem}
   .hero-photo-wrap::after{left:-10px;bottom:-10px}
   .hero-copy-panel h1{font-size:clamp(2.2rem,12vw,3.35rem)}
 }
+
+
+/* v16 homepage spacing polish */
+.hero-grid{grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);gap:64px}
+.hero-copy-panel{max-width:720px;padding:14px 0}
+.hero-copy-panel h1{font-size:clamp(2.45rem,3.7vw,4.2rem);max-width:700px;line-height:1.02;margin-bottom:18px}
+.hero-copy{max-width:680px}
+.personality-band{padding:0 0 52px}
+.personality-grid{grid-template-columns:.9fr 1.1fr;gap:42px;align-items:start}
+.personality-main img{height:380px;min-height:0;object-fit:cover;object-position:center 28%;border-radius:14px}
+.personality-copy{justify-content:flex-start;padding:8px 0 0}
+.personality-copy .actions{margin-top:20px}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-copy-panel{max-width:760px}
+  .hero-copy-panel h1{max-width:none}
+  .personality-grid{grid-template-columns:1fr;gap:24px}
+  .personality-main img{height:auto;aspect-ratio:16/10}
+}
