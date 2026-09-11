@@ -260,3 +260,40 @@ p{margin-bottom:1rem}
   .companion-copy,.form-wrap{padding:22px}
   .personality-copy{border-radius:12px}
 }
+
+
+/* v15 homepage composition — deliberately unlike the Exeter Tech Solutions layout */
+.hero{padding:54px 0 64px;background:linear-gradient(90deg,var(--pink-wash) 0 38%,#fff 38% 100%)}
+.hero-grid{grid-template-columns:minmax(330px,.88fr) minmax(0,1.12fr);gap:78px;align-items:center}
+.hero-photo-wrap{max-width:470px;justify-self:start;position:relative}
+.hero-photo-wrap::after{content:"";position:absolute;z-index:-1;left:-18px;bottom:-18px;width:88%;height:88%;background:var(--pink-soft);border-radius:22px}
+.hero-photo{aspect-ratio:4/5;border-radius:16px;object-fit:cover;object-position:center 24%;box-shadow:0 14px 34px rgba(173,31,92,.11)}
+.hero-copy-panel{max-width:560px;padding:18px 0 18px 6px}
+.hero-copy-panel h1{font-size:clamp(2.55rem,4.5vw,4.9rem);max-width:9.5ch;margin-bottom:18px}
+.hero-copy{max-width:520px;font-size:1.04rem}
+.hero-copy-panel .actions{margin-top:26px}
+.hero-copy-panel .button,.hero-copy-panel .text-link{border-radius:8px}
+
+/* Keep the rest of the homepage from falling into a mirrored template rhythm */
+.home-services{grid-template-columns:1fr 1.1fr;gap:88px}
+.personality-grid{grid-template-columns:.92fr 1.08fr;gap:48px;align-items:center}
+.personality-main{order:2}
+.personality-copy{order:1;padding:18px 0;background:transparent}
+.recent-wrap{grid-template-columns:.72fr 1.28fr;gap:86px}
+.video-feature{grid-template-columns:1.12fr .88fr;gap:70px;align-items:center}
+.home-contact-inner{grid-template-columns:1.2fr .8fr;gap:64px}
+
+@media(max-width:900px){
+  .hero{background:var(--pink-wash)}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-photo-wrap{max-width:560px;justify-self:center}
+  .hero-copy-panel{max-width:680px;padding:0}
+  .hero-copy-panel h1{max-width:none}
+  .personality-main,.personality-copy{order:initial}
+}
+@media(max-width:620px){
+  .hero{padding:34px 0 46px}
+  .hero-photo-wrap{max-width:100%}
+  .hero-photo-wrap::after{left:-10px;bottom:-10px}
+  .hero-copy-panel h1{font-size:clamp(2.2rem,12vw,3.35rem)}
+}
