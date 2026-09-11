@@ -1,16 +1,7 @@
-# Swish Housekeeping website
+# Swish Housekeeping website — v11
 
-Static website for Swish Housekeeping. Source is designed for GitHub -> CloudCannon -> Cloudflare.
+A fully restructured version of the Swish Housekeeping site.
 
-## Main files
-- `index.html` - homepage
-- `services.html` - service detail
-- `about.html` - business story and standards
-- `team.html` - team gallery
-- `contact.html` - contact details and email-generating enquiry form
-- `privacy.html` - basic privacy information
-- `assets/css/styles.css` - all site styling
-- `assets/js/main.js` - mobile navigation, year and contact-form email builder
-- `assets/images/` - client-supplied Swish images
+The design is intentionally different from Exeter Tech Solutions: editorial layouts, fewer cards and boxes, square buttons and text links, asymmetrical photography, simple pink rules, and a more local/personality-led feel.
 
-The design intentionally uses white and pink shades only. The Facebook reel is embedded from the public reel URL and also has a direct Facebook link as a fallback.
+Pages: Home, Services, About, Team, Contact and Privacy.
