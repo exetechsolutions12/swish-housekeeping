@@ -103,3 +103,36 @@ p{margin-top:0}.lead{font-size:1.04rem}.small{font-size:.88rem}
 .gallery-note{max-width:650px;margin:18px 0 0;font-size:1.02rem}
 .service-card h3{font-weight:850}
 @media(max-width:720px){.hero-photo-wrap{transform:none}.hero-badge{transform:none}}
+
+/* v10: Sarah-preview polish */
+.hero-photo-wrap{transform:none}
+.hero-photo{object-position:center 38%;box-shadow:none}
+.quick-grid.quick-grid-three{grid-template-columns:repeat(3,1fr)}
+.quick-grid.quick-grid-three .quick-item:nth-child(3){border-right:0}
+.quick-grid.quick-grid-three .quick-item:last-child{border-right:0}
+.fact-list{display:none}
+.companion-feature{padding-bottom:0}
+.companion-feature + .section{padding-top:42px}
+.companion-note{margin-top:0;max-width:900px}
+.video-frame{border:0;padding:0;background:transparent;border-radius:0}
+.video-frame iframe{border-radius:14px}
+.gallery-grid.gallery-grid-three{columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.gallery-grid.gallery-grid-three figure{margin:0;border-radius:14px;overflow:hidden;background:var(--pink-pale)}
+.gallery-grid.gallery-grid-three img{width:100%;height:360px;object-fit:cover;object-position:center 24%}
+.contact-subheading{font-size:1rem;margin:24px 0 4px;color:var(--white)!important}
+.team-intro{display:none}
+.portrait-card img{object-position:center 18%}
+
+@media(max-width:900px){
+  .quick-grid.quick-grid-three{grid-template-columns:repeat(3,1fr)}
+  .quick-grid.quick-grid-three .quick-item{border-bottom:0}
+  .gallery-grid.gallery-grid-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .gallery-grid.gallery-grid-three img{height:300px}
+}
+@media(max-width:700px){
+  .quick-grid.quick-grid-three{grid-template-columns:1fr}
+  .quick-grid.quick-grid-three .quick-item{border-right:0;border-bottom:1px solid var(--border)}
+  .quick-grid.quick-grid-three .quick-item:last-child{border-bottom:0}
+  .gallery-grid.gallery-grid-three{grid-template-columns:1fr}
+  .gallery-grid.gallery-grid-three img{height:auto;max-height:520px;object-fit:contain;background:var(--pink-pale)}
+}
