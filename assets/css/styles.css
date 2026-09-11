@@ -371,3 +371,52 @@ p{margin-bottom:1rem}
   .personality-photo-pair figure{aspect-ratio:3 / 4;border-radius:12px}
   .personality-actions{margin-top:16px}
 }
+
+/* v19 — mobile polish for the homepage contact block */
+@media(max-width:620px){
+  .home-contact{
+    padding:42px 0 46px;
+    background:var(--pink-wash);
+  }
+  .home-contact-inner{
+    display:block;
+  }
+  .home-contact h2{
+    font-size:clamp(1.75rem,8vw,2.3rem);
+    line-height:1.08;
+    margin:7px 0 10px;
+    max-width:100%;
+  }
+  .home-contact p{
+    margin:0 0 22px;
+    max-width:34rem;
+  }
+  .home-contact-links{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    width:100%;
+    text-align:left;
+  }
+  .home-contact-links a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    width:100%;
+    padding:11px 14px;
+    border:2px solid var(--pink);
+    border-radius:10px;
+    background:#fff;
+    color:var(--pink);
+    font-size:.98rem;
+    line-height:1.25;
+    text-align:center;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+  }
+  .home-contact-links a:last-child{
+    background:var(--pink);
+    color:#fff;
+  }
+}
