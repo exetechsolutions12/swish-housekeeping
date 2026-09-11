@@ -316,3 +316,58 @@ p{margin-bottom:1rem}
   .personality-grid{grid-template-columns:1fr;gap:24px}
   .personality-main img{height:auto;aspect-ratio:16/10}
 }
+
+
+/* v17 — personality photo pair and proper contact form */
+.personality-band{padding:58px 0 64px;background:#fff}
+.personality-intro{max-width:760px;margin-bottom:30px}
+.personality-intro h2{max-width:720px}
+.personality-intro p{max-width:720px}
+.personality-photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.personality-photo-pair figure{margin:0;background:var(--pink-wash);border-radius:16px;overflow:hidden}
+.personality-photo-pair img{width:100%;height:auto;object-fit:contain;display:block;border-radius:16px}
+.personality-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.form-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+.form .optional{font-weight:400;font-size:.88rem}
+.form-status{margin:12px 0 0;font-weight:700;color:var(--pink-deep)}
+.form button:disabled{opacity:.65;cursor:wait}
+@media(max-width:760px){
+  .personality-photo-pair{grid-template-columns:1fr;gap:18px}
+  .personality-photo-pair figure{max-width:520px}
+}
+
+/* v18 — keep the personality photos together, balanced and completely visible */
+.personality-photo-pair{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  max-width:980px;
+  margin-left:auto;
+  margin-right:auto;
+  align-items:stretch;
+}
+.personality-photo-pair figure{
+  margin:0;
+  aspect-ratio:3 / 4;
+  min-width:0;
+  overflow:hidden;
+  border-radius:16px;
+  background:var(--pink-wash);
+}
+.personality-photo-pair img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+  border-radius:0;
+}
+.personality-actions{
+  max-width:980px;
+  margin:20px auto 0;
+}
+@media(max-width:760px){
+  .personality-photo-pair{grid-template-columns:1fr 1fr;gap:10px}
+  .personality-photo-pair figure{aspect-ratio:3 / 4;border-radius:12px}
+  .personality-actions{margin-top:16px}
+}
