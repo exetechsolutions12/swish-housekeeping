@@ -426,3 +426,35 @@ p{margin-bottom:1rem}
 .nav-links .facebook-nav::after{display:none!important}
 .nav-links .facebook-nav:hover{transform:translateY(-1px);filter:brightness(.96);color:#fff}
 @media(max-width:760px){.nav-links .facebook-nav{width:100%;min-height:42px;border-radius:10px;margin-top:4px;background:var(--pink);color:#fff;font-size:1rem}}
+
+/* Keep the two header contact actions visually consistent */
+.nav-links .call,
+.nav-links .facebook-nav{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:9px 13px;
+  border:0;
+  border-radius:10px;
+  background:var(--pink);
+  color:#fff;
+  font-size:.93rem;
+  font-weight:700;
+  line-height:1.2;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.nav-links .facebook-nav{margin-left:-8px}
+.nav-links .call:hover,
+.nav-links .facebook-nav:hover{color:#fff;filter:brightness(.96)}
+@media(max-width:760px){
+  .nav-links .call,
+  .nav-links .facebook-nav{
+    width:100%;
+    min-height:42px;
+    margin:4px 0 0;
+    padding:10px 13px;
+    font-size:.93rem;
+  }
+}
