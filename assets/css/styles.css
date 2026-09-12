@@ -458,3 +458,6 @@ p{margin-bottom:1rem}
     font-size:.93rem;
   }
 }
+
+/* Team photo placeholder for new starters awaiting a photo */
+.team-photo-placeholder{width:100%;aspect-ratio:4/5;border-radius:12px;background:var(--pink-wash);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--pink);font-weight:700;font-size:.9rem}
