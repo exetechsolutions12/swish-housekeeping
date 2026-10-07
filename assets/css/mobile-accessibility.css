@@ -1,0 +1,99 @@
+/* Small responsive fixes; the existing desktop design stays in styles.css. */
+body { overflow-wrap: anywhere; }
+.container > *, .form, .form label, .form-wrap, .video-frame { min-width: 0; }
+.form input, .form select, .form textarea { min-width: 0; max-width: 100%; font-size: 1rem; }
+.contact-details a, .footer a, .home-contact-links a { overflow-wrap: anywhere; }
+.site-header { position: relative; }
+:focus-visible { outline: 3px solid var(--pink-deep); outline-offset: 4px; }
+a, button, input, select, textarea { scroll-margin-block: 100px; }
+
+@media (max-width: 1100px) {
+  .nav-wrap { min-height: 82px; gap: 16px; }
+  .brand-mark { width: 270px; max-width: 58vw; }
+  .nav-toggle { display: block; min-height: 44px; flex-shrink: 0; }
+  .nav-links {
+    display: none; position: absolute; top: 100%; left: 12px; right: 12px;
+    margin: 0; background: #fff; border: 2px solid var(--pink); padding: 12px;
+    flex-direction: column; align-items: stretch; gap: 4px; z-index: 30;
+    max-height: calc(100vh - 100px); max-height: calc(100dvh - 100px); overflow-y: auto;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a, .nav-links a[aria-current="page"] { padding: 10px; min-height: 44px; text-align: center; }
+  .nav-links .call, .nav-links .facebook-nav { width: 100%; min-height: 44px; margin: 0; }
+}
+@media (max-width: 900px) {
+  .home-services, .recent-wrap, .video-feature, .home-contact-inner { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .video-frame { width: 100%; max-width: 420px; margin: 0; }
+  .home-contact-links { text-align: left; }
+}
+@media (max-width: 620px) {
+  .brand-mark { width: 220px; }
+  .form input, .form select, .form textarea { font-size: max(16px, 1rem); }
+  .form-wrap { padding: 20px; }
+  .button, .text-link, .nav-toggle { min-height: 44px; }
+}
+
+/* Visitor-controlled display options, matching the ETS controls. */
+.accessibility-tools { position: fixed; right: 18px; bottom: 18px; z-index: 1000; font-size: 1rem; }
+.accessibility-toggle {
+  min-height: 46px; padding: 10px 16px; border: 2px solid #fff; border-radius: 999px;
+  background: var(--pink-deep); color: #fff; box-shadow: 0 4px 18px rgba(0,0,0,.18);
+  font: inherit; font-weight: 800; cursor: pointer;
+}
+.accessibility-panel {
+  position: absolute; right: 0; bottom: calc(100% + 10px);
+  width: min(280px, calc(100vw - 36px)); max-height: calc(100vh - 110px);
+  max-height: calc(100dvh - 110px); overflow-y: auto;
+  padding: 16px; border: 2px solid var(--pink-deep); border-radius: 14px;
+  background: #fff; color: var(--pink-deep); box-shadow: 0 4px 24px rgba(0,0,0,.16);
+}
+.accessibility-panel[hidden] { display: none; }
+.accessibility-panel p { margin: 0 0 10px; }
+.accessibility-panel button {
+  display: block; width: 100%; min-height: 44px; margin-top: 8px; padding: 10px 12px;
+  border: 2px solid var(--pink-deep); border-radius: 9px; background: #fff; color: var(--pink-deep);
+  font: inherit; font-weight: 700; line-height: 1.4; text-align: left; cursor: pointer;
+}
+.accessibility-panel button[aria-pressed="true"] { background: var(--pink-deep); color: #fff; }
+.accessibility-tools :focus-visible { outline: 3px solid #0047a8; outline-offset: 3px; }
+.footer { padding-bottom: 90px; }
+
+html.large-text { font-size: 118%; }
+html.large-text body { font-size: 1rem; }
+html.comfortable-spacing body { letter-spacing: .03em; word-spacing: .12em; line-height: 1.8; }
+html.comfortable-spacing p, html.comfortable-spacing li { line-height: 1.9; }
+html.comfortable-spacing h1, html.comfortable-spacing h2, html.comfortable-spacing h3 { line-height: 1.35; letter-spacing: .01em; }
+html.underline-links a { text-decoration: underline !important; text-decoration-thickness: 2px; text-underline-offset: .2em; }
+
+/* High contrast is applied to text and controls, preserving photographs. */
+html.high-contrast {
+  --pink: #000; --pink-deep: #000; --pink-soft: #000; --pink-wash: #fff;
+}
+html.high-contrast body, html.high-contrast main, html.high-contrast section,
+html.high-contrast .personality-copy, html.high-contrast .companion-copy,
+html.high-contrast .form-wrap, html.high-contrast .team-join, html.high-contrast .footer,
+html.high-contrast .nav-links, html.high-contrast .accessibility-panel { background: #fff !important; color: #000 !important; box-shadow: none; }
+html.high-contrast h1, html.high-contrast h2, html.high-contrast h3,
+html.high-contrast p, html.high-contrast li, html.high-contrast label,
+html.high-contrast .eyebrow, html.high-contrast figcaption, html.high-contrast time { color: #000 !important; }
+html.high-contrast a { color: #0047a8; text-decoration: underline; }
+html.high-contrast .nav-links a[aria-current="page"] { background: #fff; color: #000; border: 2px solid #000; }
+html.high-contrast .button, html.high-contrast .text-link,
+html.high-contrast .nav-links .call, html.high-contrast .nav-links .facebook-nav,
+html.high-contrast .accessibility-toggle, html.high-contrast .accessibility-panel button[aria-pressed="true"] {
+  background: #000 !important; color: #fff !important; border-color: #000 !important;
+}
+html.high-contrast .nav-toggle, html.high-contrast .accessibility-panel button,
+html.high-contrast .form input, html.high-contrast .form select, html.high-contrast .form textarea {
+  background: #fff; color: #000; border: 2px solid #000;
+}
+html.high-contrast :focus-visible { outline-color: #0047a8; }
+@media (max-width: 620px) {
+  .accessibility-tools { right: 10px; bottom: 10px; }
+  .accessibility-panel { width: min(280px, calc(100vw - 20px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .nav-links a, .nav-links .facebook-nav { transition: none; }
+  .nav-links .facebook-nav:hover { transform: none; }
+}
