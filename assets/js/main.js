@@ -11,52 +11,30 @@
   }
 
   const form = document.querySelector('#contact-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const subject = `Swish website enquiry - ${data.get('service') || 'general enquiry'}`;
-      const body = [
-        `Name: ${data.get('name') || ''}`,
-        `Phone or email: ${data.get('contact') || ''}`,
-        `Service: ${data.get('service') || ''}`,
-        '',
-        `${data.get('message') || ''}`
-      ].join('\n');
-      window.location.href = `mailto:swishhousekeeping@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
-  }
-})();
-
-
-// Swish contact form: sends directly via Formspree once YOUR_FORM_ID is replaced.
-const swishForm = document.querySelector('#contact-form');
-if (swishForm) {
+  if (!form) return;
   const status = document.querySelector('#form-status');
-  swishForm.addEventListener('submit', async (event) => {
-    const endpoint = swishForm.getAttribute('action') || '';
-    if (endpoint.includes('YOUR_FORM_ID')) {
-      event.preventDefault();
-      if (status) status.textContent = 'The contact form still needs its Formspree form ID before it can send.';
-      return;
-    }
+  let sending = false;
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const button = swishForm.querySelector('button[type="submit"]');
+    if (sending) return;
+    const button = form.querySelector('button[type="submit"]');
+    sending = true;
     if (button) { button.disabled = true; button.textContent = 'Sending…'; }
     if (status) status.textContent = '';
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(swishForm),
+        body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       });
       if (!response.ok) throw new Error('Form submission failed');
-      swishForm.reset();
+      form.reset();
       if (status) status.textContent = 'Thanks — your enquiry has been sent to Sarah.';
     } catch (error) {
       if (status) status.textContent = 'Sorry, that did not send. Please call, text or email Sarah instead.';
     } finally {
+      sending = false;
       if (button) { button.disabled = false; button.textContent = 'Send enquiry'; }
     }
   });
-}
+})();
